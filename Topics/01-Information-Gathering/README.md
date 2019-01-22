@@ -1,6 +1,6 @@
 # Information Gathering
 
-##Content
+## Content
 1. [Discovering Connected devices](#discovering-connected-devices)
 2. [Network Mapping (NMAP/ ZENMAP)](#network-mapping)
 3. [Man In The Middle](#man-in-the-middle)

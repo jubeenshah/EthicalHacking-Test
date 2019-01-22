@@ -3,13 +3,13 @@
 ### Jubeen Shah  © 2019 
 
 ## Contents
-1. Introduction
-2. H/W + S/W Requirements
-3. Topics
-	1. Network Security
-		1. Mac Address spoofing
-		2. Monitoring packets
-	2. Information Gathering
+1. [Introduction](#introduction)
+2. [H/W + S/W Requirements](#requirements)
+3. [Topics](#topics)
+	1. [Network Security](#network-security)
+		1. [Mac Address spoofing](#mac-address-spoofing)
+		2. [Monitoring packets](#pre-connection-attacks)
+	2. [Information Gathering](#information-gathering)
 
 
 ### Introduction
@@ -126,6 +126,6 @@ wi-fi-ma-ca-dd-rs   ta-rg-et-ma-ca-ddr  -33    0e-11    844      222  J's Networ
 
 ##### Gaining Access Attacks
 
-#### Inforamtion Gathering
+#### Information Gathering
 
 Please visit this [README.md](./Topics/01-Information-Gathering/README.md) file for this section

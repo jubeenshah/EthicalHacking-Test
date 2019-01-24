@@ -153,7 +153,7 @@ And while visiting `HTTP` sites you can capture the content of the user name and
 
 ```shell
     root@kali:~/MITMf# python mitmf.py --arp --spoof --gateway 10.0.2.1 --target 10.0.2.4 -i eth0 --hsts
-    ```
+```
 The problem however is that most websites now a days uses the [HTTP Strict Transport Security](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security#Applicability) which prevents the bypassing of the https security which the MITMF framework tries to do by downgrading the `HTTPS` connection to `HTTP` However, there is a workaround that involves the DNS spoofing attack. In this method, you would redirect the user to a website that looks like the website that the user often goes to to enter their username and password. 
 
 DNS spoofing can be enabled easily by editing the `mitmf.conf` file to redirect the traffic.

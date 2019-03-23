@@ -9,6 +9,7 @@
 		1. [Installing MITMF](#installing-mitmf)
 		2. [Bypassing HTTPS](#bypassing-https)
 	3. [Keyloggers, Screenshots, etc](#other-use-cases)
+4. [Creating a fake access point](#creating-a-fake-access-point)
 
 
 ### Discovering Connected devices
@@ -174,3 +175,42 @@ Hence, when trying to prevent this type of attack make sure that you have `HSTS`
     
     
 There are several more, you can run `python mitmf.py` to get the help
+
+### Creating a fake access point
+
+To create a fake access point wyou will need to install `mana-toolkit`. To do that follow the following steps.
+
+```shell
+
+apt-get update
+apt-get install mana-toolkit
+```
+
+Then open text editor to edit the configuration file if you need to change the SSID of the accesspoint you're trying to create
+
+```shell
+vim /etc/mana-toolkit/hostapd-mana.conf
+```
+
+Then you can edit the `start-nat-simple.sh` bash script to change the `phy` address to the address of the wireless network. 
+
+```shell
+vim usr/share/mana-toolkit/run-mana/start-nat-simple.sh
+```
+
+Make sure that your wireless device is in `Managed mode`
+
+```shell
+iwconfig
+ifconfig wlan0 down
+airmon-ng check kill
+iwconfig wlan0 mode managed
+ifconfig wlan0 up
+iwconfig
+```
+
+Then finally run the bash script.
+
+```shell
+bash usr/share/mana-toolkit/run-mana/start-nat-simple.sh
+```
